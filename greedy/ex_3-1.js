@@ -12,7 +12,7 @@ while(N!=0) {
         index++;
     }
 }
-console.log(obj);
+// console.log(obj);
 
 let result=0;
 for (let i=0; i<array.length; i++) {

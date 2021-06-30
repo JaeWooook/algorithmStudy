@@ -72,7 +72,7 @@ while(true) {
         break;
     }
 }
-console.log("ex_4-4 result :",result);
+console.log("ex_4-4 answer :",result);
 //other sol
 d=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];
 let arr2=[[1,1,1,1],[1,0,0,1],[1,1,0,1],[1,1,1,1]];

@@ -18,7 +18,7 @@ for (let i=0; i<M2; i++) {
     max=Math.max(max, result[i]);
     answer=max;
 }
-console.log("result",answer);
+console.log("answer: ",answer);
 
 //other sol
 

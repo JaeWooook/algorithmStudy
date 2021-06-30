@@ -11,8 +11,6 @@ let result=0;
 arr1.sort((a,b)=>b-a);
 arr2.sort((a,b)=>b-a);
 
-// console.log(arr1);
-
 console.log(arr2);
 
 let cnt=0;
@@ -39,4 +37,4 @@ let count=parseInt(M/(K+1))*K; //수열의 관점으로 가장 큰수가 나오�
 count+=parseInt(M%(K+1)); //큰 수가 나오는 횟수를 계산할때 M/K+1의 값에서 나누어 떨어지지 않은경우를 생각하여 나머지를 추가로 계산한다.
 otherResult+=count*first;
 otherResult+=(M-count)*second;
-console.log("this is other sol", otherResult);
+console.log("other answer :", otherResult);

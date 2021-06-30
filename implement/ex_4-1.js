@@ -20,7 +20,7 @@ for (let i=0; i<A.length; i++) {
 
 
 }
-console.log("ex_4-1 result :",start[0],start[1]);
+console.log("ex_4-1 answer :",start[0],start[1]);
 
 //other sol
 let B=['R','R','R','U','D','D'];

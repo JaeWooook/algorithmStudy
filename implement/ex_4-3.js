@@ -24,6 +24,6 @@ for(let i=0; i<steps.length; i++) {
         result++;
     }
 }
-console.log("ex_4-3 result :",result);
+console.log("ex_4-3 answer :",result);
 
 //other sol

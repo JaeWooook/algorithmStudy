@@ -29,5 +29,5 @@ while(true) {
     }
 }
 
-console.log("ex_4-2 result : ",result);
+console.log("ex_4-2 answer : ",result);
 //other sol
