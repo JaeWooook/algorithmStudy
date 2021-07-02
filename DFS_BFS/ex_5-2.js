@@ -78,6 +78,7 @@ function bfs(x, y) {
     que.push([x, y]);
 
     while (que.length !== 0) {
+        // console.log("out que", que);
         let line = que.shift();
         x = line[0];
         y = line[1];
@@ -85,6 +86,7 @@ function bfs(x, y) {
         for (let i = 0; i < dx_2.length; i++) {
             let nx2 = x + dx_2[i];
             let ny2 = y + dy_2[i];
+            // console.log("search nx2,ny2,x,y", nx2, ny2, x, y);
 
             if (nx2 < 0 || ny2 < 0 || nx2 >= N || ny2 >= M) {
                 continue;
@@ -94,7 +96,9 @@ function bfs(x, y) {
             }
             if (arr2[nx2][ny2] === 1) {
                 arr2[nx2][ny2] = arr2[x][y] + 1;
+                // console.log("nx2,ny2", nx2, ny2);
                 que.push([nx2, ny2]);
+                // console.log("find que", que);
             }
         }
     }
