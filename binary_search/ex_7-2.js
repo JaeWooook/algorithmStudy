@@ -2,7 +2,7 @@ const N = 5,
     M = 3;
 let arr1 = [8, 3, 7, 9, 2],
     arr2 = [5, 7, 9];
-let obj = {};
+
 //my sol
 arr1.sort((a, b) => a - b);
 
