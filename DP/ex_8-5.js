@@ -4,7 +4,7 @@ const N = 2,
 M = 15;
 const arr = [2, 3];
 const arr1 = [3, 5, 7];
-const d = Array(M).fill(10001);
+const d = Array(M + 1).fill(10001);
 d[0] = 0;
 console.log(d);
 //my sol
