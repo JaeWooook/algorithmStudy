@@ -6,7 +6,7 @@ const arr = [2, 3];
 const arr1 = [3, 5, 7];
 const d = Array(M + 1).fill(10001);
 d[0] = 0;
-console.log(d);
+
 //my sol
 
 
@@ -19,7 +19,7 @@ for (let i = 0; i < N; i++) {
         }
     }
 }
-console.log(d);
+
 if (d[M] === 10001) {
     console.log("other sol", -1);
 } else {
