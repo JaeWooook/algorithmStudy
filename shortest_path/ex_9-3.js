@@ -57,13 +57,13 @@ function dijkstra(C) {
         const dq = PQ.dequeue();
         const dist = dq.element,
             now = dq.priority;
-        console.log("this dist now", dist, now);
+        // console.log("dist now", dist, now);
         if (distance[now] < dist) {
             continue;
         }
-        console.log(graph[now]);
+        // console.log(graph[now]);
         for (let i of graph[now]) {
-            console.log("what i", i);
+            // console.log("i", i);
             let cost = dist + i[1];
             if (cost < distance[i[0]]) {
                 distance[i[0]] = cost;
