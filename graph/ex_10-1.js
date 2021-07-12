@@ -47,8 +47,10 @@ const v2 = 6,
 const parent2 = [0, 1, 2, 3, 4, 5, 6];
 
 function find_parent_two(parent2, x) { //경로 압축 기법
+    // console.log("this parent2[x],x", parent2[x], x);
     if (parent2[x] !== x) {
         parent2[x] = find_parent_two(parent2, parent2[x]);
+
     }
     return parent2[x];
 }
@@ -67,10 +69,10 @@ union_parent_two(parent2, 1, 4);
 union_parent_two(parent2, 2, 3);
 union_parent_two(parent2, 2, 4);
 union_parent_two(parent2, 5, 6);
-
+// console.log("check", parent2);
 process.stdout.write("각 원소가 속한 집합: ");
 for (let i = 1; i < v + 1; i++) {
-    process.stdout.write(`${find_parent_two(parent2, i)} `);
+    process.stdout.write(`${find_parent_two(parent2, i)} `); //다시한번 필터링해준다.
 }
 
 console.log();

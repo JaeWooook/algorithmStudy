@@ -1,3 +1,4 @@
+//other sol
 const v = 5;
 const indegree = Array(v + 1).fill(0);
 
