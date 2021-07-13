@@ -50,7 +50,6 @@ function find_parent_two(parent2, x) { //경로 압축 기법
     // console.log("this parent2[x],x", parent2[x], x);
     if (parent2[x] !== x) {
         parent2[x] = find_parent_two(parent2, parent2[x]);
-
     }
     return parent2[x];
 }
