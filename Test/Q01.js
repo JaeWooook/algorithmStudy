@@ -1,7 +1,7 @@
 //모험가 길드
-//mysol
+//my sol
 const N = 5;
-const arr = [2, 3, 1, 2, 2];
+const arr = [1, 2, 2, 2, 3];
 const result = [];
 let line = [];
 let max = -1;
@@ -18,3 +18,17 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 console.log("Q01 answer:", result.length);
+
+//other sol
+let count = 0,
+    answer = 0;
+arr.sort((a, b) => a - b);
+for (let i = 0; i < arr.length; i++) {
+    count += 1;
+    if (count >= i) {
+        answer += 1;
+        count = 0;
+    }
+}
+
+console.log("Q01 other answer : ", answer);

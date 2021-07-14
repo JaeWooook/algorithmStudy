@@ -31,11 +31,30 @@ for (let i = 0; i < td.length; i++) {
         }
     }
 }
-// console.log(zero_count.length, one_count.length);
-
 if (zero_count.length < one_count.length) {
     result = zero_count.length;
 } else {
     result = one_count.length;
 }
 console.log("Q03 answer : ", result);
+
+//other sol
+let count0 = 0;
+let count1 = 0;
+
+if (s[0] === '1') {
+    count0 += 1;
+} else {
+    count1 += 1;
+}
+
+for (let i = 0; i < s.length - 1; i++) {
+    if (s[i] !== s[i + 1]) {
+        if (s[i + 1] === '1') {
+            count0 += 1;
+        } else {
+            count1 += 1;
+        }
+    }
+}
+console.log("Q03 other sol", Math.min(count0, count1));
