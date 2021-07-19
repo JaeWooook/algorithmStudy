@@ -21,3 +21,7 @@ std.on("line", function(line) {
     console.log(input);
     process.exit();
 });*/
+
+
+//백준 인풋넣는방법
+let [n, ...arr] = require("fs").readFileSync("/dev/stdin").toString().trim().split("\n");
