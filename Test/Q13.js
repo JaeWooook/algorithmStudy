@@ -132,3 +132,61 @@ for (let candidate of candidates) {
     answer = Math.min(answer, get_sum(candidate));
 }
 console.log("Q13 other sol", answer);
+
+//other sol
+const n5 = 5, //백트레킹에 대해 학습
+    m5 = 2;
+const arr5 = [
+    [0, 2, 0, 1, 0],
+    [1, 0, 1, 0, 0],
+    [0, 0, 0, 0, 0],
+    [2, 0, 0, 1, 1],
+    [2, 2, 0, 1, 2],
+];
+
+const person = [];
+const chicken2 = [];
+for (let i = 0; i < n5; i++) {
+    for (let j = 0; j < n5; j++) {
+        if (arr5[i][j] === 1) {
+            person.push([i, j]);
+        }
+
+        if (arr2[i][j] === 2) {
+            chicken2.push([i, j]);
+        }
+    }
+}
+let ans = Infinity;
+let open = Array(chicken2.length).fill(-1);
+// console.log(open);
+function dfs(start, cnt) {
+    if (cnt === m5) {
+        let res = 0;
+        for (let i = 0; i < person.length; i++) {
+            let temp = Infinity;
+            for (let j = 0; j < chicken2.length; j++) {
+                if (open[j]) {
+                    let distance =
+                        Math.abs(person[i][0] - chicken2[j][0]) +
+                        Math.abs(person[i][1] - chicken2[j][1]);
+
+                    temp = Math.min(temp, distance);
+                }
+            }
+            res += temp;
+        }
+        ans = Math.min(ans, res);
+        return;
+    }
+
+    for (let i = start; i < chicken2.length; i++) {
+        open[i] = true;
+        dfs(i + 1, cnt + 1);
+        // console.log("what?back", ans);
+        open[i] = false;
+    }
+}
+
+dfs(0, 0);
+console.log("Q13 other sol answer", ans);

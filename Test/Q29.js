@@ -14,11 +14,12 @@ while (start <= end) {
     let mid = parseInt((start + end) / 2);
     let value = arr1[0];
     let count = 1;
-
+    // console.log("check", value, mid, start, end);
     for (let i = 1; i < N; i++) {
         if (arr1[i] >= value + mid) {
             value = arr1[i];
             count += 1;
+            // console.log("check value mid", value, mid);
         }
     }
     if (count >= C) {
