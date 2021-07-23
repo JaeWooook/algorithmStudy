@@ -19,37 +19,37 @@ const arr2 = [
 ];
 let result = 0;
 const d = Array.from(Array(20), () => Array());
-for (let i = 0; i < N1; i++) {
-    for (let j = 0; j < M1; j++) {
-        d[i][j] = arr1[i][j];
+for (let i = 0; i < N2; i++) {
+    for (let j = 0; j < M2; j++) {
+        d[i][j] = arr2[i][j];
     }
 }
 // console.log(d);
-for (let i = 1; i < N1; i++) {
-    for (let j = 0; j < M1; j++) {
+for (let i = 1; i < N2; i++) { //i가 열이고 j가 행이다 그래야 1열씩 계산하면서 앞으로나가서 가장 마지막열이 최대가된다.
+    for (let j = 0; j < M2; j++) {
         let left, leftDown, leftUp;
         if (j === 0) {
             leftUp = 0;
-            left = 0;
-            leftDown = 0;
         } else {
-            leftUp = d[i - 1][j - 1];
-            left = d[i][j - 1];
-            if (i !== N1 - 1) {
-                leftDown = d[i + 1][j - 1];
-            } else {
-                leftDown = 0;
-            }
+            leftUp = d[j - 1][i - 1];
         }
-        d[i][j] = Math.max(leftUp, Math.max(left, leftDown));
+        if (j !== N2 - 1) {
+            leftDown = d[j + 1][i - 1];
+        } else {
+            leftDown = 0;
+        }
+        left = d[j][i - 1];
+        d[j][i] = d[j][i] + Math.max(leftUp, Math.max(left, leftDown));
+        // console.log("change", d);
     }
 }
-for (let i = 0; i < N1; i++) {
+// console.log("test", d);
+for (let i = 0; i < N2; i++) {
     result = Math.max(result, d[i][M2 - 1]);
 }
 console.log("Q31 answer", result);
 
-//other sol 다시 확인하고 풀것 어렵다..
+//other sol
 const arr = [
     [1, 3, 1, 5],
     [2, 2, 4, 1],
