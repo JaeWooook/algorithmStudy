@@ -84,12 +84,23 @@ for (let i = 0; i < N; i++) {
     //이전값과 현재값 비교해서 더 큰값을 더해준다
     //더한 값을 0으로 만들어서 다시 더하는 일 없도록 한다
 }
-console.log(dp);
+// console.log(dp);
 console.log("Q33 answer", dp[N]);
 
 //other sol
-d = Array.from(Array(N + 1), () => Array());
-console.log(d);
-for (let i = 0; i < N; i++) {
-
+d = Array(N + 1).fill(0);
+// console.log(d);
+let max_value = 0;
+const t = [5, 4, 3, 2, 1, 1, 2, 3, 4, 5];
+const p = [50, 40, 30, 20, 10, 10, 20, 30, 40, 50];
+for (let i = N - 1; i > -1; i--) {
+    time = t[i] + i;
+    if (time <= N) {
+        d[i] = Math.max(p[i] + d[time], max_value);
+        max_value = d[i];
+    } else {
+        d[i] = max_value;
+    }
 }
+console.log(d);
+console.log("other sol", max_value);
