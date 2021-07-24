@@ -13,7 +13,7 @@ class PriorityQueue {
         let isContain = false;
         //전체를 순회하면서 자신의 우선순위가 더 높은 위치를 탐색
         for (let i = 0, j = this.queue.length; i < j; i++) {
-            if (this.queue[i].priority < element.priority) {
+            if (this.queue[i].priority < qElement.priority) {
                 this.queue.splice(i, 0, qElement);
                 isContain = true;
                 break;
