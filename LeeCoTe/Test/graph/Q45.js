@@ -4,7 +4,7 @@
 
 
 //other sol
-const n1 = 3,
+const n1 = 5,
     n2 = 3,
     n3 = 4,
     m1 = 2,
@@ -26,57 +26,65 @@ const data1 = [5, 4, 3, 2, 1],
     data2 = [2, 3, 1],
     data3 = [1, 2, 3, 4];
 
-for (let i = 0; i < n1; i++) {
-    for (let j = i + 1; j < n1; j++) {
-        graph[data[i]][data[j]] = true;
-        indegree[data[j]] += 1;
-    }
-}
-for (let i = 0; i < m1; i++) {
-    if (graph[trans1[i][0]][trans1[i][1]]) {
-        graph[trans1[i][0]][trans1[i][1]] = false;
-        graph[trans1[i][1]][trans1[i][0]] = true;
-        indegree[trans1[i][0]] += 1;
-        indegree[trans1[i][1]] -= 1;
-    } else {
-        graph[trans1[i][0]][trans1[i][1]] = true;
-        graph[trans1[i][1]][trans1[i][0]] = false;
-        indegree[trans1[i][0]] -= 1;
-        indegree[trans1[i][1]] += 1;
-    }
-}
 const result = [];
 const que = [];
 
-for (let i = 1; i < n1 + 1; i++) {
-    if (indegree[i] === 0) {
-        que.push(i);
-    }
-}
 let certain = true;
 let cycle = false;
 
-for (let i = 0; i < n1; i++) {
-    if (que.length === 0) {
-        cycle = true;
-        break;
-    }
-    if (que.length >= 2) {
-        certain = false;
-        break;
-    }
-    let now = que.shift();
-    result.push(now);
-    for (let j = 1; j < n + 1; j++) {
-        if (graph[now][j]) {
-            indegree[j] -= 1;
+function initArray(n, m, trans, data) {
+    for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
 
-            if (indegree[j] === 0) {
-                que.push(j);
+            graph[data[i]][data[j]] = true;
+            indegree[data[j]] += 1;
+        }
+    }
+    for (let i = 0; i < m; i++) {
+        if (graph[trans[i][0]][trans[i][1]]) {
+            graph[trans[i][0]][trans[i][1]] = false;
+            graph[trans[i][1]][trans[i][0]] = true;
+            indegree[trans[i][0]] += 1;
+            indegree[trans[i][1]] -= 1;
+        } else {
+            graph[trans[i][0]][trans[i][1]] = true;
+            graph[trans[i][1]][trans[i][0]] = false;
+            indegree[trans[i][0]] -= 1;
+            indegree[trans[i][1]] += 1;
+        }
+    }
+}
+
+function sorting(n) {
+    for (let i = 1; i < n + 1; i++) {
+        if (indegree[i] === 0) {
+            que.push(i);
+        }
+    }
+    for (let i = 0; i < n; i++) {
+        if (que.length === 0) {
+            cycle = true;
+            break;
+        }
+        if (que.length >= 2) {
+            certain = false;
+            break;
+        }
+        let now = que.shift();
+        result.push(now);
+        for (let j = 1; j < n + 1; j++) {
+            if (graph[now][j]) {
+                indegree[j] -= 1;
+
+                if (indegree[j] === 0) {
+                    que.push(j);
+                }
             }
         }
     }
 }
+initArray(n1, m1, trans1, data1);
+sorting(n1);
 if (cycle) {
     console.log("IMPOSSIBLE");
 } else if (!certain) {
