@@ -38,7 +38,7 @@ class PriorityQueue {
         // 비어있지 않다면 첫번째 요소를 삭제하고 반환한다.
         if (this.queue.length === 0) {
             return new Error("우선순위 큐에 데이터가 없습니다.");
-        }
+        } //element만 뱉어내도록 하고싶으면 this.queue.shift().element;하면 된다!!
         return this.queue.shift();
     }
 }
