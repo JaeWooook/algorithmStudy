@@ -40,21 +40,21 @@ const solution = (key, lock) => {
     let answer = true;
     const len = lock.length;
     const arr = Array.from(Array(len * 3), () => Array(len * 3).fill(null));
-    // console.log(arr); 3배를 키운다.
+    // console.log(arr);
     for (let i = len; i < len * 2; i++) {
         for (let j = len; j < len * 2; j++) {
             arr[i][j] = lock[i - len][j - len];
         }
     }
+    console.log(arr);
     //키를 회전 시키면서 탐색
     for (let i = 0; i < 4; i++) {
         key = rotationKey(key, i); //신기하다? i는 뭐지
         //키를 이동시키면서 탐색
         for (let j = 0; j <= arr.length - key.length; j++) {
             for (let k = 0; k <= arr[0].length - key[0].length; k++) {
-                const newLock = arr.map(function(arr) {
-                    return arr.slice();
-                });
+                const newLock = arr.map((arr) => arr.slice()); //지속적으로 새로 newLock을 생성해야한다 arr그대로 쓰면 4번반복해서 사용할수가 없다.
+                // console.log("newlock?", newLock); 이거랑 그냥 arr이랑 똑같다.
                 for (let m = 0; m < key.length; m++) {
                     for (let n = 0; n < key.length; n++) {
                         if (newLock[j + m][k + n] === 1 && key[m][n] === 1) {
@@ -68,6 +68,7 @@ const solution = (key, lock) => {
                     }
                 }
                 if (isAnswer(newLock, len)) {
+                    // console.log("what ?", newLock);
                     return true;
                 }
             }
