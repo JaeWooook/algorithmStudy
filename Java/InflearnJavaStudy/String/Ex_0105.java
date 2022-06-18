@@ -22,7 +22,7 @@ public class Ex_0105 {
                 lt++;
                 rt--;
             }
-            //런타임에러발생
+            //아래는 오답
 //            if(Character.isAlphabetic(text[lt]) && Character.isAlphabetic(text[rt])) {
 //                char tmp = text[lt];
 //                text[lt] = text[rt];
