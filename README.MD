@@ -2,6 +2,7 @@
 ## Language
 ![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=black)
 ![Java Badge](https://img.shields.io/badge/Java-007396?style=flat-square&logo=Java&logoColor=red)
+## 알고리즘 문제 출처
 #### 이것이코딩테스트다 문제풀이
 * 그리디
 * 구현
