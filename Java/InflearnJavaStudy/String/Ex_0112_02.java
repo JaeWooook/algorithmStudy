@@ -12,7 +12,8 @@ public class Ex_0112_02 {
 
         //문자열을 substring을 이용해서 자른다.
         for(int i=0; i<num; i++) {
-            String tmpStr=str.substring(0,len).replace('#','1').replace('*', '0'); //자른부분을 스트링 배열에 넣어준다.
+            String tmpStr=str.substring(0,len).replace('#','1').replace('*', '0');
+            //자른부분을 스트링 배열에 넣어준다.
             //replace를 이용해서 #은 1로 *은 0으로 변환시켜준다.
             int tmpDec = Integer.valueOf(tmpStr,2);
             //2진수의 문자열을 10진수로 변환 해준다.
