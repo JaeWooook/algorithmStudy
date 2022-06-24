@@ -3,7 +3,7 @@ package Java.InflearnJavaStudy.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Ex_0101 {
+public class Ex_0201 {
     //위처럼 int 배열로 안하는 이유는
     //ArrayList로하면 추가 되기 때문에 0이 찍혀서 0을 걸러낼 필요가없다.
 //    public int[] solution(int[] array, int num) {
@@ -32,7 +32,7 @@ public class Ex_0101 {
     }
 
     public static void main(String[] args){
-        Ex_0101 T = new Ex_0101();
+        Ex_0201 T = new Ex_0201();
         Scanner in=new Scanner(System.in);
         int i = in.nextInt();
         int[] array = new int[i];
