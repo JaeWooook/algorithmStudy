@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+//Two Pointer
 public class Ex_0302_02 {//시간초과 발생
     public ArrayList<Integer> solution(int n , int m, int[] array1, int[] array2) {
         //5
