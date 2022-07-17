@@ -6,27 +6,21 @@ public class Ex_0306 {
     public int solution(int n, int m, int[] arr) {
         //14 2
         //1 1 0 0 1 1 0 1 1 0 1 1 0 1
-        int answer = 0, sum = 0, cnt = 0;
-        int lt = 0;
-//        for(int rt = 0; rt<n; rt++) {
-//            if(arr[rt]==0) {
-//                cnt++;
-//            }
-//            if(cnt == m) {
-//
-//            }
-//        }
-        int rt=0;
-        while(rt<n) {
-            if(arr[rt]==0) {
-                cnt++;
-            }
-            rt++;
-            if(cnt == m) {
+        int answer = 0, rt=0;
+        for(int lt=0; lt<arr.length; lt++) {
+            rt=lt;
+            int cnt=0;
+            while(cnt<=m && rt<arr.length) {
                 if(arr[rt]==0) {
-                    cnt=0;
-                    lt++;
+                    cnt++;
                 }
+                if(cnt>m) {
+                    break;
+                }
+                if(answer<rt-lt+1) {
+                    answer=rt-lt+1;
+                }
+                rt++;
             }
         }
 
