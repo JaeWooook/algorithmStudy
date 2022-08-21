@@ -3,7 +3,8 @@ package Java.InflearnJavaStudy.HashMap_TreeSet;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Ex_0404 {public int solution(String str1, String str2) {
+public class Ex_0404 {
+    public int solution(String str1, String str2) {
     //bacaAacba
     //abc
     int answer = 0;
