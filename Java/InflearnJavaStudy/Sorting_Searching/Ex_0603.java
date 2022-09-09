@@ -4,17 +4,18 @@ import java.util.Scanner;
 
 public class Ex_0603 {
     public int[] solution(int n, int[] arr) {
-
-        for(int i=0; i<n-1; i++) {
-            for(int j=0; j<n-i-1; j++) {
-                if(arr[j] > arr[j+1]) {// > 오름차순이고, < 내림차순이다.
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
-                }
+        //6
+        //11 7 5 6 10 9
+        int index=0;
+        for(int i=1; i<n; i++) {
+            int temp = arr[i];
+            int prev = i-1;
+            while( (prev >= 0) && (arr[prev] > temp)) {// > 이게 오름차순, < 이거는 내림차순이다.
+                arr[prev+1] = arr[prev];
+                prev--;
             }
+            arr[prev+1] = temp;
         }
-
         return arr;
     }
     public static void main(String[] args){
