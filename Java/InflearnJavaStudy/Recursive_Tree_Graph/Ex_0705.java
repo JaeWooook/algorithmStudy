@@ -1,7 +1,5 @@
 package Java.InflearnJavaStudy.Recursive_Tree_Graph;
 
-import java.util.Scanner;
-
 public class Ex_0705 {
     int count;
 

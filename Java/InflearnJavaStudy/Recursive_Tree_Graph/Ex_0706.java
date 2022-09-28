@@ -17,11 +17,13 @@ public class Ex_0706 {
         }
 
         // 현재 인덱스를 선택하고, 다음 인덱스로 재귀를 타거나, 현재 인덱스를 선택하지 않고, 다음 인덱스로 재귀를 타는 두가지 경우를 모두 탐색한다.
-        select[idx] = true;
-        solution(arr, idx+1, select);
-        select[idx] = false;
-        solution(arr, idx+1, select);
+        select[idx] = true; // 선택 O
+        solution(arr, idx+1, select); // 다음 인덱스 재귀
+        select[idx] = false; // 선택 X
+        solution(arr, idx+1, select); // 다음 인덱스 재귀
     }
+
+
     public void solution2(int[] arr) {//Bitmask 사용
         //3
         for(int i=0; i<1 << arr.length; i++) {
