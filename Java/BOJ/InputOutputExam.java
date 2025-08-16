@@ -26,6 +26,7 @@ public class InputOutputExam {
             String str = readLine(); // 문자열
 
             int[] arr1 = readIntArray(n); // 1차원 배열
+            int[] arrByLine = readIntLineByArray(n); //1차원 배열 1줄에 띄어쓰기로 정수입력
             int[][] arr2 = readInt2DArray(n, m); // 2차원 배열
 
             String[] strArr = readStringArray(n); // 문자열 배열
@@ -85,6 +86,14 @@ public class InputOutputExam {
          * @throws IOException
          */
         static int[] readDobIntArray(int size) throws IOException {
+            int[] arr = new int[size];
+            for (int i = 0; i < size; i++) {
+                arr[i] = Integer.parseInt(br.readLine());
+            }
+            return arr;
+        }
+
+        static int[] readIntLineByArray(int size) throws IOException {
             int[] arr = new int[size];
             for (int i = 0; i < size; i++) {
                 arr[i] = Integer.parseInt(br.readLine());
