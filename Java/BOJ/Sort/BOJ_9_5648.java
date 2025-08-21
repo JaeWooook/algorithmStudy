@@ -16,6 +16,7 @@ public class BOJ_9_5648 {
         static StringTokenizer st;
 
         public static void main(String[] args) throws IOException {
+            //정렬2 기본문제 boj 5648
             br = new BufferedReader(new InputStreamReader(System.in));
             bw = new BufferedWriter(new OutputStreamWriter(System.out));
             StringBuilder sb = new StringBuilder();
@@ -39,6 +40,11 @@ public class BOJ_9_5648 {
                     arr[idx++] = Long.parseLong(st.nextToken());
                 }
             }
+
+            /**
+             * 1. 문자열로 순서를 뒤집고 long타입으로 전환하면서 앞에 0인경우는 알아서 삭제되게된다.
+             * 2. 멀티스레드 환경이 아님으로 속도가 가장 빠른 StringBuilder를 사용
+             */
 
             long[] answer = new long[arr.length];
             for(int i=0; i<arr.length; i++) {
