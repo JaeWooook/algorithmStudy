@@ -130,6 +130,18 @@ public class InputOutputExam {
             }
             return arr;
         }
+
+        static String[][][] readString3DArray(int n, int m, int k) throws IOException {
+            String[][][] arr = new String[n][m][];
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < m; j++) {
+                    String line = br.readLine();
+                    arr[i][j] = line.split(""); // 한 글자씩 저장하고 싶다면
+                }
+                br.readLine(); // 층 사이의 빈 줄 소비 (마지막 층에서는 null이면 그냥 무시됨)
+            }
+            return arr;
+        }
     }
 
 }
