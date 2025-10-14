@@ -2,7 +2,7 @@ package Java.BOJ.Dequeue;
 import java.io.*;
 import java.util.*;
 
-public class BOJ_1_2346 {
+public class BOJ_2_2346 {
 
     public static class Main {
 
